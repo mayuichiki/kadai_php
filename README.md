@@ -10,7 +10,7 @@
 - フォーム画面
 https://healthroomapp.sakura.ne.jp/kadai07_basic_php/index.php
 - ログイン画面
-https://healthroomapp.sakura.ne.jp/kadai07_basic_php/select.php
+https://healthroomapp.sakura.ne.jp/kadai07_basic_php/login.php
 
 ## ④作ったアプリケーション用のIDまたはPasswordがある場合
 
