@@ -8,9 +8,9 @@
 
 ## ③DEMO
 - フォーム画面
-https://healthroomapp.sakura.ne.jp/kadai07_basic_php/index.php
+https://healthroomapp.sakura.ne.jp/kadai_php/index.php
 - ログイン画面
-https://healthroomapp.sakura.ne.jp/kadai07_basic_php/login.php
+https://healthroomapp.sakura.ne.jp/kadai_php/login.php
 
 ## ④作ったアプリケーション用のIDまたはPasswordがある場合
 
