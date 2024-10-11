@@ -1,4 +1,5 @@
 <?php
+session_start();
 //PHP:コード記述/修正の流れ
 //1. insert.phpの処理をマルっとコピー。
 //   POSTデータ受信 → DB接続 → SQL実行 → 前ページへ戻る
@@ -18,6 +19,8 @@ $memo    = $_POST["memo"];
 //2. DB接続します
 //*** function化する！  *****************
 include("funcs.php");
+//LOGINチェック
+sschk();
 $pdo = db_conn();
 
 //３．データ登録SQL作成

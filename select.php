@@ -1,10 +1,16 @@
 <?php
+//最初にSESSIONを開始！！ココ大事！！
+session_start();
+
 //【重要】
 //insert.phpを修正（関数化）してからselect.phpを開く！！
 include("funcs.php");
-$pdo = db_conn();
+
+//LOGINチェック → funcs.phpへ関数化しましょう！
+sschk();
 
 //２．データ登録SQL作成
+$pdo = db_conn();
 $sql = "SELECT * FROM kadai07_table";
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
@@ -38,8 +44,11 @@ $json = json_encode($values,JSON_UNESCAPED_UNICODE);
     <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
+        <?=$_SESSION["name"]?>さん、こんにちは！
       <a class="navbar-brand" href="index.php">フォーム画面</a>
-      </div>
+      <a class="navbar-brand" href="user.php">ユーザー登録</a>
+      <a class="navbar-brand" href="logout.php">ログアウト</a>
+    </div>
     </div>
   </nav>
 </header>
@@ -58,7 +67,9 @@ $json = json_encode($values,JSON_UNESCAPED_UNICODE);
         <td><?=h($value["memo"])?></td>
         <td><?=h($value["indate"])?></td>
         <td><a href="detail.php?id=<?=h($value["id"])?>">更新</a></td>
-        <td><a href="delete.php?id=<?=h($value["id"])?>">削除</a></td>
+        <?php if($_SESSION["kanri_flg"]=="1"){ ?>
+          <td><a href="delete.php?id=<?=h($value["id"])?>">削除</a></td>
+        <?php } ?>
     </tr>  
     <?php } ?>
     </table>

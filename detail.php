@@ -1,9 +1,12 @@
 <?php
+session_start();
 $id = $_GET["id"];
 //１．PHP
 //select.phpのPHPコードをマルっとコピーしてきます。
 //※SQLとデータ取得の箇所を修正します。
 include("funcs.php");
+//LOGINチェック
+sschk();
 $pdo = db_conn();
 
 //２．データ登録SQL作成
